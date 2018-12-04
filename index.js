@@ -90,16 +90,6 @@ app.use(function (err, req, res, next) {
 })
 
 const port = process.env.PORT || 9000
-const server = app.listen(port, ()=>{
+app.listen(port, ()=>{
     console.log("Server is active")
-})
-const io = require('socket.io').listen(server);
-io.sockets.on('connection', function(socket){
-    console.log("client is connected")
-    console.log(`connected id is: ${socket.id}`)
-    socket.on('joinRoom', function(data){
-        console.log("ROOM JOINED")
-        console.log(data);
-        socket.emit('randomNumber', data)
-    })
 })
