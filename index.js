@@ -69,10 +69,12 @@ app.use('/api/v1/plans/:planId/stops', function(req, res, next) {
   }, stopController)
 app.use('/api/v1/users', userController)
 app.use('/api/v1/invitations', invitationController);
+
 //SEND ALL OTHER GETS TO REACT APP
 app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/front-end/build/index.html'));
 });
+
 app.use(function (err, req, res, next) {
     if (err.code == 'EBADCSRFTOKEN') {
     // handle CSRF token errors here
