@@ -1,0 +1,10 @@
+.location-search-results-list {
+    height: 100%;
+    overflow: scroll;
+}
+.location-search-results-map {
+    height: 100%;
+}
+.location-search-results {
+    height: 30em;
+}
